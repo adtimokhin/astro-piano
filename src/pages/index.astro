@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Key from '../components/Key.astro';
+---
+
+<Layout title="Moobasic">
+	<main class="w-[100wv] h-[100vh] grid md:grid-cols-2 sm:grid-cols-1 overflow-x-hidden selection:text-white selection:bg-black">
+		<div class="bg-[#FAC670] relative h-[100vh]">
+			<div class="w-full flex justify-center h-fit pt-8">
+			<div id="page_header" class="w-[92%] h-fit flex justify-between">
+				<a class="font-Ranade font-bold text-[24px] tracking-tighter" id="project_name" href="https://mubasic-test.webflow.io/" target="_blank">Moobasic</a>
+				<h1 class="font-Ranade font-bold text-[24px] tracking-tighter" id="project_icon"></h1>
+			</div>
+			</div>
+
+			<div id="hero_section_wrapper" class="absolute top-1/2 left-[4%] -translate-y-1/2 max-w-[30em] w-[96%]">
+				<h2 class="font-Ranade font-bold text-[3em] md:text-[5em] tracking-tighter leading-[80%] block" >The <span class="text-[#F37925]">#1</span> Source For Children's Music</h2>
+			</div>
+			
+			<div id="hero_section_wrapper" class="absolute bottom-[2em] left-[4%] max-w-[16em] w-[100%]">
+				<p class="font-Ranade font-medium text-[15px]" >An ever-growing catalogue of high-quality children’s music, sourced by talented music creators from all over the world.</p>
+			</div>
+
+		</div>
+		<div class="bg-[#1B1A19] relative h-[100vh]">
+
+			<div class="space-y-3 w-[90%] absolute top-1/2 -translate-y-1/2 right-0" >
+			<!-- <Key backgroundColor='#90C3CE' keyboardKey='M' playingColor={[200,100,12]}/> -->
+			<Key backgroundColor={[144,195,206]} keyboardKey='M'/>
+			<Key backgroundColor={[250,198,112]} keyboardKey='B'/>
+			<Key backgroundColor={[246,225,190]} keyboardKey='A'/>
+			<Key backgroundColor={[243,121,38]} keyboardKey='I'/>
+			<Key backgroundColor={[193,168,230]} keyboardKey='C'/>
+			</div>
+
+			<div class="space-y-3 w-[60%] absolute top-1/2 -translate-y-1/2 right-0 h-[38rem]" >
+				<div class="relative w-full h-full">
+					<div class="absolute w-full h-fit top-[3.5rem]">
+						<Key backgroundColor={[18,18,18]} keyboardKey='U'/>
+					</div>
+					<div class="absolute w-full h-fit bottom-[11.25rem]">
+						<Key backgroundColor={[18,18,18]} keyboardKey='S'/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<script>
+const keys = ["M", "U","B","A","S","I","C"];
+const sounds = [new Audio("Note M.m4a"), new Audio("Note U.m4a"), new Audio("Note B.m4a"), new Audio("Note A.m4a"), new Audio("Note S.m4a"), new Audio("Note I.m4a"), new Audio("Note C.m4a")]
+
+document.addEventListener("keypress", (event)=>{
+		var name = event.key;
+		const keyIndex = keys.indexOf(name.toUpperCase());
+		if (keyIndex !== -1) {
+			
+			const element = document.querySelector(`#${name.toUpperCase()}`);
+			// step 1: add a color transition to the Key component
+			element?.classList.add("playing");
+			// step 2: play the sound
+
+			sounds[keyIndex].currentTime = 0;
+			sounds[keyIndex].play()
+			window.setTimeout(()=>{
+				element?.classList.remove("playing");
+				sounds[keyIndex].pause();
+			}, 1000)
+			
+		}
+	});
+
+for (let i = 0; i < keys.length; i++) {
+	const element = keys[i];
+	const htmlElement = document.querySelector(`#${element}`);
+	const keyIndex = keys.indexOf(element);
+
+	const playSound = ()=>{
+		// step 1: add a color transition to the Key component
+		htmlElement?.classList.add("playing");
+		// step 2: play the sound
+		sounds[keyIndex].currentTime = 0;
+		sounds[keyIndex].play()
+		window.setTimeout(()=>{
+			htmlElement?.classList.remove("playing");
+			sounds[keyIndex].pause();
+		}, 1000)
+	}
+
+	htmlElement?.addEventListener("click", playSound);	
+}
+	
+
+</script>
