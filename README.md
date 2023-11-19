@@ -5,7 +5,7 @@
 
 ## Overview
 
-Astro Piano is a web application that allows you to play a small piano using your mouse or keyboard keys. The project is developed using [Astro](https://astro.build/), JavaScript, and Tailwind CSS. The design is inspired by [Mubasic Test](https://mubasic-test.webflow.io/), bringing a sleek and modern piano-playing experience to the web.
+Astro Piano is a web application that allows you to play a small piano using your mouse or keyboard keys. The project is developed using [Astro](https://astro.build/), JavaScript, and Tailwind CSS. The design is inspired by [Mubasic](https://mubasic-test.webflow.io/), bringing a sleek and modern piano-playing experience to the web.
 
 ## Features
 
