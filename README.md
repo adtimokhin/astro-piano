@@ -2,6 +2,8 @@
 ![Static Badge](https://img.shields.io/badge/status-deployed-brightgreen)
 ![Static Badge](https://img.shields.io/badge/License-MIT-blue)
 
+![Preview Image](https://user-images.githubusercontent.com/37998602/284030201-07544923-f277-4b31-a2d1-6071d525dbfe.png)
+
 
 ## Overview
 
