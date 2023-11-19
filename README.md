@@ -1,4 +1,4 @@
-# Astro Piano 🎹
+# Astro Piano
 ![Static Badge](https://img.shields.io/badge/status-deployed-brightgreen)
 ![Static Badge](https://img.shields.io/badge/License-MIT-blue)
 
