@@ -16,7 +16,7 @@ Astro Piano is a web application that allows you to play a small piano using you
 
 ## Demo
 
-Check out the live demo: [Astro Piano Demo]([https://your-demo-link.com](https://adtimokhin.github.io/mubasic-clone/))
+Check out the live demo: [Astro Piano Demo](https://adtimokhin.github.io/mubasic-clone/)
 
 ## Installation
 
